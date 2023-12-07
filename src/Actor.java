@@ -1,12 +1,12 @@
 import javafx.scene.paint.Color;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 public class Actor {
+
+    // Declaring variables
     private int x;
     private int y;
     private boolean isAlive;
@@ -69,12 +69,14 @@ public class Actor {
         }
     }
 
+    // Handles the terrain logic
     public void handleTerrain(Terrain terrain) {
         // Terrain handling logic
     }
 
+    // Method for pushing blocks
     public void pushableBlock(String direction) {
-        // Logic for pushing blocks
+
         int tileX = x;
         int tileY = y;
 
@@ -103,6 +105,7 @@ public class Actor {
 
     }
 
+    // Tells user that they died
     private void die() {
         this.isAlive = false;
         System.out.println("You died");
