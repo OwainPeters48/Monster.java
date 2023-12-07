@@ -4,11 +4,14 @@ class Frog extends Monster {
     private int playerPositionX;
     private int playerPositionY;
 
+    // Frog constructor
     public Frog(int monsterX, int monsterY, String direction, int playerPositionX, int playerPositionY) {
         super("Pink Ball", 1, monsterX, monsterY, direction);
         this.playerPositionX = playerPositionX;
         this.playerPositionY = playerPositionY;
     }
+
+    // Method that allows the frog to move
     @Override
     public void move() {
         if (playerInsight()) {
@@ -18,11 +21,12 @@ class Frog extends Monster {
         }
     }
 
+    // Checks if the player is on the same row or column as the monster
     private boolean playerInsight() {
-        // Check if the player is on the same row as the monster
         return playerPositionX == monsterX || playerPositionY == monsterY;
     }
 
+    // Method to move the frog towards the player
     private void moveTowardPlayer() {
         if (playerPositionX > monsterX) {
             monsterX++;
@@ -37,6 +41,7 @@ class Frog extends Monster {
 
     }
 
+    // Checks if there is no path to the player
     private boolean noPathFound(){
         // Checks if there are obstacles in the path to the player
         if (playerPositionX == monsterX) {
@@ -45,6 +50,7 @@ class Frog extends Monster {
         return true;
     }
 
+    // Method to randomly move the frog
     private void moveRandom() {
         int direction = new Random().nextInt(4);
         switch (direction) {
