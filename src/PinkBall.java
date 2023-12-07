@@ -1,7 +1,11 @@
 class Ball extends Monster {
+
+    // PinkBall constructor
     public Ball(int monsterX, int monsterY, String direction) {
         super("Pink Ball", 1, monsterX, monsterY, direction);
     }
+
+    // Method that allows monster to move
     @Override
     public void move() {
         if (canMoveForward()) {
@@ -11,6 +15,7 @@ class Ball extends Monster {
         }
     }
 
+    // Method that checks monster can move forward
     private boolean canMoveForward() {
         int nextX = monsterX;
         int nextY = monsterY;
@@ -35,6 +40,7 @@ class Ball extends Monster {
         return true;
     }
 
+    // Method to move monster
     private void moveForward() {
         switch (direction) {
             case "up":
