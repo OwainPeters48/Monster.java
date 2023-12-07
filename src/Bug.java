@@ -1,10 +1,13 @@
 class Bug extends Monster {
     private boolean followEdge;
 
+    // Bug constructor
     public Bug(int monsterX, int monsterY, String direction, boolean followEdge) {
         super("Bug", 2, monsterX, monsterY, direction);
         this.followEdge = followEdge;
     }
+
+    // Method that allows bug to move tile
     @Override
     public void move() {
         if (canMoveForward()) {
@@ -14,6 +17,7 @@ class Bug extends Monster {
         }
     }
 
+    // Method for the monster to move tile
     private boolean canMoveForward() {
         int nextX = monsterX;
         int nextY = monsterY;
@@ -38,6 +42,7 @@ class Bug extends Monster {
         return true;
     }
 
+    // Method to program how a bug will move along edges
     private void followEdge() {
 
     }
